@@ -10,25 +10,31 @@ function App() {
   const [tags, setTags] = useState([]);
 
 
-  let filterJobs = [];
-  const validjob = (item) => {
-    let valid = true;
-    tags.forEach((tag) => {
-      if (
-        item.role !== tag &&
-        item.level !== tag &&
-        !item.languages.includes(tag) &&
-        !item.tools.includes(tag)
-      ) {
-        valid = false;
-      }
-    });
-    return valid;
-  };
 
 
 
   useEffect(() => {
+
+
+    const validjob = (item) => {
+      let valid = true;
+      tags.forEach((tag) => {
+        if (
+          item.role !== tag &&
+          item.level !== tag &&
+          !item.languages.includes(tag) &&
+          !item.tools.includes(tag)
+        ) {
+          valid = false;
+        }
+      });
+      return valid;
+    };
+
+
+
+
+    let filterJobs = [];
     Datas.forEach((item) => {
       if (validjob(item)) {
         filterJobs.push(item);

@@ -9,13 +9,7 @@ function App() {
   const [jobs, setJobs] = useState([...Datas]);
   const [tags, setTags] = useState([]);
 
-
-
-
-
   useEffect(() => {
-
-
     const validjob = (item) => {
       let valid = true;
       tags.forEach((tag) => {
@@ -30,7 +24,6 @@ function App() {
       });
       return valid;
     };
-
 
 
 

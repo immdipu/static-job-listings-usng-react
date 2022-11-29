@@ -55,7 +55,9 @@ function App() {
 
   };
 
-
+  const Clear = () => {
+    setTags([]);
+  }
 
   const tagRemove = (selectedTag) => {
     let index = tags.indexOf(selectedTag);
@@ -73,7 +75,7 @@ function App() {
     <>
       <div className="w-full max-w-[68rem] px-6 m-auto">
         <img src="./images/bgheaderdesktop.svg" alt="bg" className="bg-[#318181e0] absolute top-0 left-0 right-0 -z-10 h-fit " />
-        {tags.length > 0 && <SearchBar tags={tags} tagDelete={tagDelete} />}
+        {tags.length > 0 && <SearchBar tags={tags} tagDelete={tagDelete} Clear={Clear} />}
         <CardList btnfuncion={btnfuncion} jobs={jobs} />
       </div>
 

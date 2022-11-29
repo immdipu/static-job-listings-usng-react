@@ -1,7 +1,11 @@
 import React from "react";
 import SearchItems from "./SearchItems";
 
-const SearchBar = ({ tags, tagDelete }) => {
+const SearchBar = ({ tags, tagDelete, Clear }) => {
+  const AllClearHanlde = () => {
+    Clear();
+  };
+
   return (
     <>
       <div className="bg-white relative rounded-md shadow-lg w-full min-h-[3.5rem] mt-[7.7rem] flex justify-between items-center">
@@ -14,7 +18,10 @@ const SearchBar = ({ tags, tagDelete }) => {
             })}
           </ul>
         </div>
-        <p className="w-[5%]  text-[#5ba4a4] font-semibold hover:underline cursor-pointer text-lg mr-2">
+        <p
+          className="w-[5%]  text-[#5ba4a4] font-semibold hover:underline cursor-pointer text-lg mr-2"
+          onClick={() => AllClearHanlde()}
+        >
           Clear
         </p>
       </div>
